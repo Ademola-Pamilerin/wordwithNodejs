@@ -1,0 +1,19 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "Weather App",
+  "main": "Weather.js",
+  "scripts": {
+    "start":"node Src/Dictionary.js",
+    "execute":"nodemon Src/Dictionary.js -e hbs,css,js"
+  },
+  "author": "Ademola",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "request": "^2.88.2",
+    "yargs": "^16.1.1"
+  }
+}

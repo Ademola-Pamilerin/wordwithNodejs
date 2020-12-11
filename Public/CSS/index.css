@@ -1,0 +1,23 @@
+body{
+    text-align: center;
+    justify-content: center;
+}
+nav{
+    display: flex;
+    flex-flow: row;
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+}
+li{
+    padding: 20px
+}
+a{
+    text-decoration: none;
+    text-align: center;
+    color: blue;
+}
