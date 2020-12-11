@@ -1,3 +1,4 @@
+
 let submit=document.querySelector('button');
 let input=document.querySelector('input');
 let matched=document.querySelector('.matched');
@@ -10,27 +11,41 @@ const Submitted=value=>{
              return  matched.innerHTML=`<h2>Please ${data.error}</h2>`
             }else{
            return matched.innerHTML=`<div>
-           <h2> Ademola</h2>
+           <h2> ${data.title}</h2> <h3>${data.body}</h3>
            </div>`;
             }
         });
     });
 };
 const Inputed=value=>{
+    if(value.length<=0){
+        matched.innerHTML='';
+    }
+    else{
     fetch('https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch="'+value).then(response=>{
         response.json().then(data=>{
             let values=data.query.search.filter(igkey=>{
                 let reg=new RegExp(`^${value}`,'gi');
                 return (igkey.title.match(reg));
             });
-           let html= values.map(igkey=>{
-                return`<h2><p>${igkey.title}</p></h2>`
-            });      
-            matched.innerHTML=html;
-            console.log(html);          
+            // values.forEach(igkey => {
+            //     console.log(igkey.title);
+            //     let title="<h2>"+igkey.title+"</h2>";
+            //     let end="</a>";
+            //     let refrence='<a href="/search?search='+igkey.title+'>';
+            //     matched.innerHTML=refrence+title+end;
+            // });  
+            let output=values.map(igkey=>{
+                let title="<h2>"+igkey.title+"</h2>";
+                let end="</a>";
+                let refrence='<a onclick="Submitted(\''+igkey.title+'\')">';
+                return refrence+title+end;
+            });
+            matched.innerHTML=output;    
              });
         })
     }
+}
  const Clicked=()=>{
      console.log('was clicked')
  }
