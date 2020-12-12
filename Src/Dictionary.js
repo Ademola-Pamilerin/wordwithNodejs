@@ -3,6 +3,7 @@ const path=require('path');
 const Caller=require('../Handler/search');
 const app=express();
 const hbs=require('hbs');
+let port =process.env.PORT||3000;
 
 //define paths
 const Public=path.join(__dirname,'../Public');
@@ -44,6 +45,6 @@ app.get('/search',(req,res)=>{
 app.get('*',(req,res)=>{
    res.render('404');
 });
-app.listen(3000,()=>{
+app.listen(port,()=>{
    console.log('started on Port 3000');
 });

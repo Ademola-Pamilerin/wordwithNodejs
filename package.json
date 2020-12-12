@@ -4,8 +4,8 @@
   "description": "Weather App",
   "main": "Weather.js",
   "scripts": {
-    "start":"node Src/Dictionary.js",
-    "execute":"nodemon Src/Dictionary.js -e hbs,css,js"
+    "start": "node Src/Dictionary.js",
+    "execute": "nodemon Src/Dictionary.js -e hbs,css,js"
   },
   "author": "Ademola",
   "license": "ISC",
@@ -13,6 +13,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "hbs": "^4.1.1",
+    "nodemon": "^2.0.6",
     "request": "^2.88.2",
     "yargs": "^16.1.1"
   }
