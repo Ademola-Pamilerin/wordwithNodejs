@@ -1,10 +1,9 @@
-
 let submit=document.querySelector('button');
 let input=document.querySelector('input');
 let matched=document.querySelector('.matched');
 const Submitted=value=>{
     console.log('was clicked');
-    matched.innerHTML="<h2>loading...</h2>"
+    matched.innerHTML="<h2>loading....</h2>"
     fetch('/search?search='+value).then(response=>{
         response.json().then(data=>{
             if(data.error){
